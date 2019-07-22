@@ -19,6 +19,14 @@ spring:
       discovery:
         enabled: true
         service-id: app-config-server
+    bus:
+      trace:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          ##kafka链接地址
+          brokers: 192.168.120.110:9092,192.168.120.150:9092,192.168.120.224:9092
 
 eureka:
   client:
@@ -44,3 +52,6 @@ management:
     web:
       exposure:
         include: "*"
+  ##不进行加密!
+  security:
+    enabled: false
